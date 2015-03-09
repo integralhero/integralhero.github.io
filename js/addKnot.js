@@ -231,7 +231,7 @@ $(document).ready(function() {
     
     function initBoard() {
         var currentKnots = localStorage.getItem("knots");
-        $("#knots").html(currentKnots);
+        if(currentKnots != "") $("#knots").html(currentKnots);
         var numberOfKnots = $(".knotMember").length;
         addPlaceHolders(numberOfKnots);
         restore();
