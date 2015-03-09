@@ -231,10 +231,12 @@ $(document).ready(function() {
     
     function initBoard() {
         var currentKnots = localStorage.getItem("knots");
+        console.log(currentKnots);
         if(currentKnots != "") $("#knots").html(currentKnots);
+        if(currentKnots == null) localStorage.setItem("knots","");
         var numberOfKnots = $(".knotMember").length;
         addPlaceHolders(numberOfKnots);
-        restore();
+        if(!currentKnots) restore();
     }
 	function updateContentPane(isNewLog) {
 		var currentKnots = localStorage.getItem("knots");
