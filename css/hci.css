@@ -21,8 +21,8 @@ header h1 {
 #modal1 {
 	height: 100%;
 }
+
 #addForm {
-	display: none;
 	text-align: center;
 }
 
@@ -33,14 +33,15 @@ header h1 {
 }
 
 .motivation{
-	color: white;
+	color: rgba(255,255,255,0.3);
 	display: inline;
 	transition: all 0.5s ease;
 	font-size: 2em;
 	cursor: pointer;
 	opacity: 0;
-	float: right;
-	top: -50px;
+	position: absolute;
+	top: 5%;
+	right: 50%;
 }
 
 .motivation:hover{
@@ -60,6 +61,62 @@ button.addKnot {
 	padding: 20px 0;
 	margin-bottom: 20px;
 }
+#modal1.modal.modal-fixed-footer .modal-content {
+  position: fixed;
+  height: 100%;
+  padding-bottom: 64px;
+  width: 100%;
+  overflow-y: auto;
+}
+#modal1.modal {
+	max-height: 50%;
+}
+#modal2.modal .modal-footer {
+	padding: 16px;
+	height: 100%;
+	
+
+}
+#modal2.modal .modal-content {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-radius: 0;
+	  background: rgba(0,0,0,0.5);
+  	color: white;
+  	padding: 40px;
+}
+#modal2 textarea {
+	padding: 10px;
+	font-size: 1.3em;
+	height: 80px;
+}
+#modal2 a.modal-action.modal-close {
+  margin: auto;
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #4caf50;
+  padding: 10px;
+  font-size: 2em;
+  color: white;
+  text-decoration: none;
+  transition: background 0.5s ease-in;
+  -webkit-transition: background 0.5s ease-in;
+  -moz-transition: background 0.5s ease-in;
+}
+.senderBtn:hover {
+	background: #81c784 !important;
+}
+#modal2.modal {
+	max-height: 38%;
+	top: 0 !important;
+	background-color: none !important;
+	background: none;
+}
+#modal1 {
+	top: 0 !important;
+}
 #addKnotPane #hideAddPane {
 	position: absolute; 
 	right: 0;
@@ -67,7 +124,7 @@ button.addKnot {
 }
 
 .knotMember {
-	padding: 8px 10px;
+	padding: 25px 10px;
 	background: -webkit-linear-gradient(
 		to right,
 		#2980b9, #27ae60
@@ -95,6 +152,9 @@ button.addKnot {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.placeholder:hover {
+	cursor: pointer;
 }
 h3#addHeaderText {
 	color: #ccc;
@@ -215,18 +275,60 @@ li.notificationSing:hover {
 .fa-child:hover {
 	color: #27ae60;
 }
-
-
+h3.yName {
+  position: absolute;
+  top: 20%;
+  font-size: 5em;
+  color: rgba(255, 255, 255, 0.498039);
+}
+a.pName {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  font-size: 5em;
+  color: rgba(255, 255, 255, 0.498039);
+  z-index: 22;
+}
+a.pName:hover {
+	text-decoration: none;
+}
 .yellowBlock {
-	background-color: yellow;
+	background-color: #f1c40f;
 	height: 100%;
 	position: absolute;
 	top:0;
 }
-
+.needsMotivation {
+	color: #f44336 !important;
+	transition: all 0.5s ease-in;
+	-webkit-transition: all 0.5s ease-in;
+	-moz-transition: all 0.5s ease-in;
+}
+.needsMotivation:hover {
+	color: #e57373 !important;
+	cursor: pointer;
+}
 .redBlock {
-	background-color: red;
+	background-color: #3498db;
 	height: 100%;
 	position: absolute;
 	top:0;
+}
+.completed {
+  background: goldenrod;
+  content: 'Knot completed!';
+}
+input.rangeValue {
+  display: block;
+  width: 100px;
+  color: white;
+  font-size: 2.2em;
+  text-align: center;
+}
+h3.completedTxt {
+  color: rgba(255,255,255,0.5);
+}
+h3.aTitle {
+	font-size: 3.5em;
+	text-align: center;
 }
