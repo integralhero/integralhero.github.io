@@ -34,14 +34,15 @@ header h1 {
 
 .motivation{
 	color: rgba(255,255,255,0.3);
-	display: inline;
+	display: none;
+	height: 100%;
 	transition: all 0.5s ease;
 	font-size: 2em;
 	cursor: pointer;
-	opacity: 0;
+	/*opacity: 0;*/
 	position: absolute;
-	top: 5%;
-	right: 50%;
+	top: -25px;
+	left: 60%;
 }
 
 .motivation:hover{
@@ -188,6 +189,7 @@ a.addKnotText:hover {
 	display: none;
 	z-index: 3;
 	position: relative;
+	text-align: center;
 }
 .done {
 	content: "Done";
@@ -288,6 +290,7 @@ a.pName {
   font-size: 5em;
   color: rgba(255, 255, 255, 0.498039);
   z-index: 22;
+   pointer-events: none;
 }
 a.pName:hover {
 	text-decoration: none;
@@ -318,12 +321,28 @@ a.pName:hover {
   background: goldenrod;
   content: 'Knot completed!';
 }
+#reset {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	opacity: 0;
+}
+.add, .minus {
+	color: white;
+	cursor: pointer;
+}
 input.rangeValue {
-  display: block;
+  display: inline;
   width: 100px;
   color: white;
   font-size: 2.2em;
   text-align: center;
+}
+.logSlider {
+	opacity: 0;
 }
 h3.completedTxt {
   color: rgba(255,255,255,0.5);
