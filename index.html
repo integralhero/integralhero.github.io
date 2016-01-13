@@ -1,111 +1,168 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Knot</title>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>David Jiang</title>
+  	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="_/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+</head>
+<body>
+	<nav class="navigation">
+		<section class="layout">
+			<ul class="nav">
+				<li class="hideNav"><a href="#">Hide Navigation</a></li>
+				<li id="contactNav"><a  href="#">Contact Me</a></li>
+				<li id="aboutNav"><a  href="#">About</a></li>
+				<li id="projectsNav"><a  href="#">Projects</a></li>
+				<li id="homeNav"><a  href="#">Home</a></li>
+			</ul>
+			<ul class="altNav">
+				<li class="showNav"><a href="">Show Navigation</a></li>
+			</ul>
+		</section>
+	</nav>
 
-    <!-- Bootstrap CSS -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/hci.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <a href="#" id="reset"></a> 
-    <section id="container">
-      <header>
-        <h1 id="logo" class="text-center">Knot</h1>
-        <!-- <span id="notifs">3</span> -->
-        <div id="notifCenter">
-          <ul class="notifications">
-            <li class="notificationSing">
-              <h4>Mike has just logged in "Read for Fun". </h4>
-            </li>
-            <li class="notificationSing">
-              <h4>Wending has invited you to "Swim". </h4>
-            </li>
-            <li class="notificationSing">
-              <h4>John has just sent an encouragement for "Morning Run". </h4>
-            </li>
-          </ul>
-        </div>
-      </header>
-      <!-- Modal Structure -->
-      
-      <section id="contentPane">
-        <div id="modal2" class="modal">
-          <div class="modal-content">
-            <h4>Send a Motivation Message!</h4>
-            <textarea>A bunch of text</textarea>
-          </div>
-          <a href="#" class="senderBtn modal-action modal-close">SEND</a>
-          <!-- <div class="modal-footer">
-            <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Send</a>
-          </div> -->
-        </div>
-        <div id="modal1" class="modal modal-fixed-footer">
-          <div class="modal-content">
-            <section class="hoverButton" id="addKnotPane">
-            <section class='row' id='addForm'>
-              <h3 id="addHeaderText">ADD NEW KNOT</h3><!-- <a id='hideAddPane' class="waves-effect waves-light btn" href='#'>hide</a> -->
-              <form class='col s12'>
-                <div class='row'> 
-                  <div class='input-field col s6'> 
-                    <input id='partnerIn' type='text'></input><label for='partnerIn'>Partner</label>
-                  </div>
-                  <div class='input-field col s6'> 
-                    <input id='titleIn' type='text'></input><label for='titleIn'>Activity</label>
-                  </div>
-                </div> 
-                <div class='input-field col s12'>
-                  <input id='goalIn' type='text'></input><label for='goalIn'>Target Quantity</label> 
-                </div>
-                <!-- <div class='input-field col s12'>
-                  <input id='enddateIn' type='date' class='datepicker'></input><label for='enddateIn'>End Date</label>
-                </div>  -->
-                
-              </form>
-            </section>
-          </div>
-          <div class="modal-footer">
-            <a id="addBtn" class="waves-effect waves-light btn">Add</a>
-          </div>
-        </div>
-          <a href="">
-            <!-- <button class="addKnot">
-              <i class="fa fa-plus-circle"></i> Add Knot
-            </button> -->
+	<div id="homeB" class="splashTab">
+		<section class="layout">
+			<div id="splashGuy">
+				<img src="images/guy_happy.png">
+			</div>
+			<div id="splashText">
+				<h1>Hi, I'm David.</h1>
+				<p>I build <em>better</em> websites.</p>
+			</div>
+		</section>
+	</div>
+	
+	<div id="workB" class="workTab">
+		<h1>Psst...want to see some of the things I've made?</h1>
+	</div>
 
-          </a>
-        </section>
-        
-        <section id="knots">
-          
-        </section>
-      </section>
-    </section>
-    
-    
-    
-    
-    <!-- jQuery -->
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <!-- Bootstrap JavaScript -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/jquery.transit.min.js"></script>
-    <script type="text/javascript" src="js/jquery.pulse.min.js"></script>
-    <script type="text/javascript" src="js/addKnot.js"></script>
+	<div class="projectTab">
+		<ul id="projects">
+			<li class="project"><a href class="overlay-trigger" data-overlay="project-1"><img class="img-zoom" src="images/rally.jpg" alt=""></a></li>
+			<li class="project"><a href class="overlay-trigger" data-overlay="project-2"><img class="img-zoom" src="images/mig.jpg" alt=""></a></li>
+			<li class="project"><a href class="overlay-trigger" data-overlay="project-3"><img class="img-zoom" src="images/ab.jpg" alt=""></a></li>
+			<li class="project"><a href class="overlay-trigger" data-overlay="project-4"><img class="img-zoom" src="images/ases.jpg" alt=""></a></li>
+		</ul>
+		<div id="project-1" class="overlay">
+		    <div class="overlay-inner">
+		    	<h1>Project Title: Rally</h1>
+		    	<a class="closer" href="#">X</a>
+		    	<div class="left">
+		    		<em>Description</em>
+		    		<p>Rally is a social-networking application I created with a team as a part of CS 147. It allows friends to find each other and connect through spur-of-the-moment social interactions. See more at <a href="http://www.gorally.me">www.gorally.me</a></p>
+		    		<em>Tools Used</em>
+		    		<p>Node.js(Express.js), MongoDB(Mongoose), HTML5/CSS3, Handlebars.js, jQuery, Flat UI<p>
+		    	</div>
+		    	<div class="right">
+		    		<img src="images/rally_screen.jpg" alt="">
+		    	</div>
+		        
+		    </div>
+		</div>
+		<div id="project-2" class="overlay">
+		    <div class="overlay-inner">
+		    	<h1>Project Title: MiG Website</h1>
+		    	<a class="closer" href="#">X</a>
+		    	<div class="left">
+		    		<em>Description</em>
+		    		<p>This was contracted work for the Stanford Mobile Innovation Group in the Stanford University Economics Department. Mostly just a static, one-page website. See more at <a href="http://www.mig.stanford.edu">mig.stanford.edu</a></p>
+		    		<em>Tools Used</em>
+		    		<p>HTML5/CSS3, jQuery<p>
+		    	</div>
+		    	<div class="right">
+		    		<img src="images/mig_screen.jpg" alt="">
+		    	</div>
+		        
+		    </div>
+		</div>
+		<div id="project-3" class="overlay">
+		    <div class="overlay-inner">
+		    	<h1>Project Title: AuctionBase</h1>
+		    	<a class="closer" href="#">X</a>
+		    	<div class="left">
+		    		<em>Description</em>
+		    		<p>A basic auction website built for CS145. Nothing too fancy besides having to parse through and create schemas for a large dataset.</p>
+		    		<em>Tools Used</em>
+		    		<p>Python, HTML5/CSS3, jQuery, MySQL<p>
+		    	</div>
+		    	<div class="right">
+		    		<img src="images/ab_screen.jpg" alt="">
+		    	</div>
+		        
+		    </div>
+		</div>
+		<div id="project-4" class="overlay">
+		    <div class="overlay-inner">
+		    	<h1>Project Title: ASES Summit</h1>
+		    	<a class="closer" href="#">X</a>
+		    	<div class="left">
+		    		<em>Description</em>
+		    		<p>Built a web app to help delegates of an international conference keep track of their application progress. Also created a front-end website (mostly informational).See more at <a href="http://asessummi.stanford.edu">asessummit.stanford.edu</a></p>
+		    		<em>Tools Used</em>
+		    		<p>Ruby on Rails, HTML5/CSS3, ActiveRecord, jQuery, Javascript<p>
+		    	</div>
+		    	<div class="right">
+		    		<img src="images/ases_screen.jpg" alt="">
+		    	</div>
+		        
+		    </div>
+		</div>
+		
+	</div>
 
-  </body>
+	<div id="aboutB" class="aboutTab">
+		<section class="layout">
+			<div class="header">
+				<h1>about me</h1>
+			</div>
+			<div class="bottomGuy">
+				<img src="images/guy_small_normal.png">
+			</div>
+			<div id="bio">
+				<p>Currently, I'm a Junior studying Computer Science at Stanford University. My focus is in Human-Computer Interaction (nifty, eh?). I'm a big fan of flat design, basketball, and music.</p>
+			</div>
+		</section>
+	</div>
+
+	<div id="contactB" class="contactTab">
+		<section class="layout">
+			<div class="header">
+				<h1>talk to me</h1>
+			</div>
+			<div id="contactBody">
+				<div class="contactGuy">
+					<img src="images/guy_surprise.png">
+				</div>
+				<form id="contact">
+					<input id="emailInput" type="email" name="email" placeholder="me@email.com" required>
+					<textarea id="messageInput" name="message" rows="10" cols="40" placeholder="Send me a message!" required></textarea>
+					<input id="submitBtn" type="submit" value="submit">
+				</form>
+			</div>
+			
+		</section>
+	</div>
+	
+	<footer>
+		<section class="layout">
+			<p id="left">Created by David Jiang (C) 2015</p>
+			<div id="right">
+				<ul>
+					<li><a href="#homeB">Home</a></li>
+					<li><a href="#workB">Projects</a></li>
+					<li><a href="#aboutB">About Me<a/></li>
+					<li><a href="#contactB">Contact</a></li>
+				</ul>
+			</div>
+		</section>
+	</footer>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="_/js/script.js" type="text/javascript"></script>
+	<script src="http://localhost:35729/livereload.js" type="text/javascript"></script>
+	<!-- Bootstrap JavaScript -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
 </html>

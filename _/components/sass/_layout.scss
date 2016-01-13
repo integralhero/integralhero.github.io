@@ -1,0 +1,504 @@
+//Susy setup -------------
+$total-columns : 12;
+$column-width: 4em;
+$gutter-width: 1em;
+$grid-padding: $gutter-width;
+@include border-box-sizing;
+
+$small: 30em;
+$medium: 45em;
+$large: 75em;
+
+
+html,body { height: 100%; margin: 0px; padding: 0px; }
+
+//Nav --------------------
+.navigation {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: $lightgray;
+	.layout {
+		@include container;
+	}
+	@include at-breakpoint($medium) {
+		padding: 10px;
+	}
+	@include single-transition(all, 0.5s, ease-in);
+	ul.altNav {
+
+		display: initial;
+		
+		text-align: center;
+		@include at-breakpoint($small) {
+			display: none;
+		}
+		
+		a {
+			@include single-transition(all, 0.3s, ease-in);
+			font-family: 'Lato', Serif;
+		}
+		li.showNav {
+			padding: 15px 0;
+			&:hover {
+				a {
+					color: $salmon;
+					text-decoration: none;
+					background: $lightgray;
+				}
+			}
+		}
+		
+	}
+	ul.nav {
+		.hideNav {
+			text-align: center;
+		}
+		display: none;
+		@include at-breakpoint($small) {
+			display: initial;
+			@include span-columns(12 omega, 12);
+			@include horizontal-list;
+			.hideNav {
+				display: none;
+			}
+		}
+		li {
+			@include single-transition(all, 1.8s, ease-in);
+			display: inline;
+			@include at-breakpoint($small) {
+				float:right;
+				a {
+					float: right;
+				}
+			}
+			i {
+
+			}
+			a {
+				display: block;
+				text-decoration: none;
+				padding: 15px 22px;
+				font-family: 'Lato', Serif;
+				color: black;
+			}
+			&:hover {
+
+				a {
+					color: $salmon;
+					@include single-transition(all, 0.3s, linear);
+
+				}
+			}
+		}
+	}
+}
+
+
+//Splash-tab ------------------------------
+
+.splashTab {
+	height: 80%;
+	width: 100%;
+	background: $darkgray;
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+  	resize: both;
+  	overflow: auto;
+	.layout {
+		@include container;
+		#splashGuy {
+			@include single-transition(all, 0.3s, linear);
+			float: left;
+			padding: 40px;
+			@include at-breakpoint($medium) {
+				width: inherit;
+				img {
+					display: initial;
+				}
+			}
+			width: 100%;
+			img {
+
+				height: 100px;
+				margin: 0 auto;
+				display: block;
+
+			}
+			
+		}
+		#splashText {
+			float: right;
+			text-align: center;
+			padding: 40px;
+			width: 100%;
+			h1 {
+				font-size: 2.8em;
+				font-family: 'Oswald', 'Nunito', sans-serif;
+				font-weight: 900;
+				text-transform: uppercase;
+				margin-bottom: 0.8rem;
+				@include single-transition(all, 0.5s, ease-in);
+			}
+			@include at-breakpoint($small)  {
+				padding: 50px 40px 40px 40px;
+			}
+			@include at-breakpoint($medium) {
+				width: inherit;
+				h1 {
+					font-size: 3.8em;
+				}
+			}
+			
+			p {
+				font-size: 1.5em;
+				font-family: 'Lato', Serif;
+
+				em {
+					color : $salmon;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+
+}
+
+//Project-tab ----------------------
+.transition {
+    -webkit-transform: scale(1.2); 
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.projectTab {
+	height: 300px;
+	background: $cinder;
+	display: none;
+	overflow-x: scroll;
+
+	#projects {
+		width: 1200px;
+		white-space: nowrap;
+		padding-top: 50px;
+		@include at-breakpoint($small) {
+			
+		}
+		li.project {
+			display: inline;
+			img {
+				@include single-transition(all, .2s, ease-in-out);
+			}
+			.img-zoom {
+
+			}
+			
+		}
+	}
+	.overlay {
+	    overflow: scroll;
+	    position: fixed;
+	    top: 0;
+	    bottom: 110%;
+	    left: 0;
+	    right: 0;
+	    width: 100%;
+	    z-index: 10000;
+	    opacity: 0;
+	    background: #4D4D4D;
+	    transition: opacity 200ms linear, bottom 0s linear 200ms;
+	 
+	    &-open {
+	        bottom: 0;
+	        opacity: 1;
+	        transition: opacity 200ms linear, bottom 0s linear;
+	        background: $pearl;
+	    }
+	 
+	    &-view {
+	        overflow: hidden;
+	    }
+	 
+	    &-form {
+	        .overlay-inner {
+	            background: #FFF;
+	            margin: 5rem auto;
+	            padding: 4rem;
+	            max-width: 700px;
+	            
+	        }
+	    }
+	}
+	.overlay-inner {
+		padding: 20px;
+		.closer {
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 2.5em;
+			color: $cinder;
+			font-family: 'Lato', sans-serif;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		h1 {
+        	text-align: center;
+        	font-size: 3em;
+        	font-family: 'Lato', sans-serif;
+        	margin-bottom: 35px;
+        }
+        .left {
+			@include at-breakpoint($small) {
+				@include span-columns(6, 12);
+			}
+			em {
+				font-weight: bold;
+				font-family: 'Lato', serif;
+				display: block;
+				margin-top: 20px;
+				font-family: 'Playfair Display', serif;
+				font-style: italic;
+				font-size: 1.5em;
+				margin-bottom: 5px;
+			}
+			p {
+				font-family: 'Lato', sans-serif;
+				padding-left: 20px;
+			}
+        }
+        .right {
+			@include at-breakpoint($small) {
+				@include span-columns(4 omega, 12);
+			}
+			img {
+				padding: 20px;
+				display: block;
+				margin: 0 auto;
+			}
+        }
+	}
+}
+
+
+
+
+//Work-tab -------------------------
+.workTab {
+	background: $green;
+	height: 20%;
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+  	resize: both;
+  	overflow: auto;
+  	cursor: pointer;
+  	@include single-transition(background, 0.9s, ease-out);
+  	h1 {
+		text-align: center;
+		color: white;
+		font-size: 1.0em;
+		font-style: italic;
+		font-family: 'Lato', sans-serif;
+		@include single-transition(all, 0.5s, ease-in);
+	}
+	@include at-breakpoint($small) {
+		h1 {
+			font-size: 1.5em;
+		}
+	}
+	&:hover {
+		background: lighten($green, 20);
+	}
+
+}
+
+//About-tab --------------------------------
+
+.aboutTab {
+	height: 100%;
+	background: $darkgray;
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+  	resize: both;
+  	overflow: auto;
+
+	.layout {
+		@include container;
+		#bio {
+			width: 100%;
+			float: left;
+			padding: 25px;
+			background: $green;
+			p {
+				color: white;
+				font-family: 'Lato', sans-serif;
+				line-height: 20px;
+			}
+			border: 5px solid white;
+			@include at-breakpoint($small) {
+				width: 500px;
+			}
+
+		}
+		.header {
+			text-align: center;
+			h1 {
+				font-size: 3em;
+				font-weight: 700;
+				font-family: 'Nunito', sans-serif;
+				color: $green;
+				margin: 0 auto;
+				width: 300px;
+				padding-bottom: 20px;
+				margin-bottom: 80px;
+				border-bottom: 3px solid $green;
+			}
+
+		}
+		.bottomGuy {
+			img {
+				height: 100px;
+				margin: 0 auto;
+				display: block;
+			}
+			width: 100%;
+			float: left;
+			padding: 60px;
+			@include at-breakpoint($small) {
+				width: inherit;
+				
+			}
+		}
+	}
+}
+
+.contactTab {
+	height: 100%;
+	background: $pearl;
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+  	resize: both;
+  	overflow: auto;
+
+	.layout {
+		@include container;
+		
+		.header {
+			text-align: center;
+
+			@include at-breakpoint($small) {
+				padding-bottom: 60px;
+
+			}
+			h1 {
+				font-size: 3em;
+				font-weight: 700;
+				font-family: 'Nunito', sans-serif;
+				color: $green;
+				margin: 0 auto;
+				width: 300px;
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+				border-bottom: 3px solid $green;
+			}
+
+		}
+		.contactGuy {
+			img {
+				height: 100px;
+				margin: 0 auto;
+				display: block;
+			}
+			width: 100%;
+			float: left;
+			padding: 30px;
+			@include at-breakpoint($small) {
+				width: inherit;
+				@include span-columns (3, 12);
+			}
+
+		}
+		form {
+			@include at-breakpoint($small) {
+				@include span-columns (6 omega, 12);
+			}
+			#emailInput {
+				background: $formGray;
+				border: none;
+				padding: 20px 5px;
+				width: 320px;
+				margin-bottom: 20px;
+				font-family: 'Lato', sans-serif;
+			}
+			#messageInput {
+				width: 320px;
+				background: $formGray;
+				border: none;
+				padding: 20px 5px;
+				border: none;
+			    overflow: auto;
+			    outline: none;
+				resize: none;
+			    -webkit-box-shadow: none;
+			    -moz-box-shadow: none;
+			    box-shadow: none;
+				display: block;
+			    font-family: 'Lato', sans-serif;
+			}
+			#submitBtn {
+				border: none;
+				font-family: 'Lato', sans-serif;
+				width: 320px;
+				background: $salmon;
+				color: $pearl;
+				@include single-transition(background, 1.0s, ease-out);
+				&:hover {
+					background: lighten($salmon, 15);
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+//footer ------------------
+
+footer {
+	height: 15%;
+	background: $cinder;
+	padding-top: 30px;
+	.layout {
+		@include container;
+		#left {
+			@include span-columns(4,12);
+			color: white;
+			font-family: 'Lato', sans-serif;
+
+		}
+		#right {
+			@include span-columns(4 omega,12);
+			display: inline;
+			color: white;
+			float: right;
+			text-align: right;
+			font-family: 'Lato', sans-serif;
+			overflow: hidden;
+			@include at-breakpoint($small) {
+				ul {
+					li {
+						display: inline;
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+}
