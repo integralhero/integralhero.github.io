@@ -1,10 +1,10 @@
 $(document).ready(function(){
-	$('.img-zoom').hover(function() {
-        $(this).addClass('transition');
+	// $('.img-zoom').hover(function() {
+ //        $(this).addClass('transition');
  
-    }, function() {
-        $(this).removeClass('transition');
-    });
+ //    }, function() {
+ //        $(this).removeClass('transition');
+ //    });
     
 	$('li.hideNav a').on('click', function(e){
 		e.preventDefault();
@@ -30,9 +30,17 @@ $(document).ready(function(){
 	    }, 1400);
 	});
 	$('#contact').submit(function(e){
-		$("#submitBtn").attr('value','done!');
-		$("#submitBtn").css({'background':'#2E6269'});
 		e.preventDefault();
+		
+		$.ajax({
+		  type: "POST",
+		  url: "http://api.cloudstitch.com/dnjiang/magic-form-2/datasources/sheet",
+		  data: $("#contact").serialize(),
+		  success: function() {
+		  	$("#submitBtn").attr('value','done!');
+			$("#submitBtn").css({'background':'#2E6269'});
+		  }
+		});
 
 	});
 
@@ -63,7 +71,7 @@ $(document).ready(function(){
 	$('.closer').on('click', function(e) {
 		event.preventDefault();
 		var test = $(this).parent().parent();
-		
+		console.log($(this).parent());
 		test.removeClass('overlay-open');
 		$('body').removeClass('overlay-view');
 	});
@@ -81,11 +89,11 @@ $(document).ready(function(){
  
         $(id).addClass('overlay-open');
         $('body').addClass('overlay-view');
- 
         $(id).on('click', function(event) {
             if (event.target.id == overlay) {
                 $(id).removeClass('overlay-open');
                 $('body').removeClass('overlay-view');
+
             }
         });
     });

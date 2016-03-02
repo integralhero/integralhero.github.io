@@ -12,6 +12,9 @@ $large: 75em;
 
 html,body { height: 100%; margin: 0px; padding: 0px; }
 
+.overlay-view {
+	overflow: hidden;
+}
 //Nav --------------------
 .navigation {
 	position: fixed;
@@ -106,6 +109,22 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   	align-items: center;
   	resize: both;
   	overflow: auto;
+  	position: relative;
+  	a.resume {
+  		position: absolute;
+  		right: 1.5em;
+  		bottom: 1.5em;
+		color: white;
+		background: lighten($green, 20%);
+		@include single-transition(background, 0.4s, linear);
+		padding: 15px;
+		border-radius: 8px;
+		font-family: 'Lato', sans-serif;
+		&:hover {
+			text-decoration: none;
+			background: $green;
+		}
+  	}
 	.layout {
 		@include container;
 		#splashGuy {
@@ -173,6 +192,8 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
     transform: scale(1.2);
 }
 
+
+
 .projectTab {
 	height: 300px;
 	background: $cinder;
@@ -187,19 +208,48 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 			
 		}
 		li.project {
-			display: inline;
-			img {
-				@include single-transition(all, .2s, ease-in-out);
-			}
-			.img-zoom {
+			display: inline-block;
+			vertical-align: top;
 
+			a.overlay-trigger {
+				&:hover {
+					text-decoration: none;
+				}
+				.project_card {
+					display: flex;
+					height: 200px;
+					width: 200px;
+
+					text-align: center;
+					background: #bdc3c7;
+					justify-content: center;
+					align-items: center;
+					h1 {
+						font-size: 1.4em;
+						color: #95a5a6;
+						font-family: 'Oswald', 'Nunito', sans-serif;
+						small {
+							font-size: .5em;
+							font-style: italic;
+						}
+					}
+					
+					&:hover {
+						opacity: 0.8;
+						transition: opacity 0.5s ease-in;
+						h1 {
+							color: $green;
+							transition: color 0.2s linear;
+						}
+					}
+				}
 			}
-			
 		}
 	}
 	.overlay {
 	    overflow: scroll;
 	    position: fixed;
+	    display: none;
 	    top: 0;
 	    bottom: 110%;
 	    left: 0;
@@ -209,12 +259,13 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 	    opacity: 0;
 	    background: #4D4D4D;
 	    transition: opacity 200ms linear, bottom 0s linear 200ms;
-	 
+	 	padding: 20px;
 	    &-open {
 	        bottom: 0;
 	        opacity: 1;
 	        transition: opacity 200ms linear, bottom 0s linear;
 	        background: $pearl;
+	        display: block;
 	    }
 	 
 	    &-view {
@@ -232,12 +283,13 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 	    }
 	}
 	.overlay-inner {
+
 		padding: 20px;
 		.closer {
 			position: absolute;
-			top: 0;
-			right: 0;
-			font-size: 2.5em;
+			top: 5px;
+			right: 5px;
+			font-size: 1em;
 			color: $cinder;
 			font-family: 'Lato', sans-serif;
 			&:hover {
@@ -247,26 +299,94 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 		h1 {
         	text-align: center;
         	font-size: 3em;
-        	font-family: 'Lato', sans-serif;
+        	font-family: 'Oswald', sans-serif;
         	margin-bottom: 35px;
         }
         .left {
+        	padding-left: 10%;
+        	padding-right: 10%;
 			@include at-breakpoint($small) {
-				@include span-columns(6, 12);
+				@include span-columns(12, 12);
+			}
+			.screenshot {
+				width: 90%;
+				margin: 0 auto;
+				height: auto;
+				display: flex;
+				margin-bottom: 20px;
+			}
+			
+			ul {
+				padding-left: 20px;
+			}
+			ul.tagsList {
+				text-align: center !important;
+			}
+			ul.classicList {
+				list-style-type: circle;
+				list-style-position: inside;
+				margin-top: 10px;
+				li {
+					padding: 2px;
+
+				}
+
+			}
+			ul.pills{
+				list-style: none;
+
+				li {
+					display: inline-block;
+					padding:8px;
+					font-family: 'Lato', sans-serif;
+					border-radius: 3px;
+					margin-right: 5px;
+					background: lighten($green,14%);
+					color: white;
+					a {
+						color:white;
+						font-weight: bolder;
+					}
+					@include single-transition(opacity, 0.3s, linear);
+					&:hover {
+						opacity: 0.6;
+					}
+				}
+			}
+			h3 {
+				font-family: 'Lato', sans-serif;
+				font-size: 1.8em;
+				font-weight: bolder;
+				padding: 20px;
+				margin-top: 10px;
+				opacity: 0.7;
 			}
 			em {
 				font-weight: bold;
-				font-family: 'Lato', serif;
 				display: block;
 				margin-top: 20px;
-				font-family: 'Playfair Display', serif;
-				font-style: italic;
+				font-family: 'Nunito', serif;
 				font-size: 1.5em;
 				margin-bottom: 5px;
 			}
+			.demoVideo {
+				display: flex;
+				justify-content: center;
+				text-align: center;
+				figcaption {
+					font-size: 0.6em;
+					display: block;
+					text-align: center;
+					font-family: 'Merriweather', serif;
+				}
+			}
 			p {
-				font-family: 'Lato', sans-serif;
 				padding-left: 20px;
+				line-height: 1.6em;
+				font-family: 'Merriweather', serif;
+				b {
+					font-weight: bold;
+				}
 			}
         }
         .right {
